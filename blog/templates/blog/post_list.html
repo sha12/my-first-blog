@@ -6,10 +6,12 @@
   <div>
    <h1><a href=""> Django Blog</a></h1>
   </div>
+ {% for post in posts %}
   <div>
-   <p>published: 15th December</p>
-   <h2><a href="">First Blog</a></h2>
-   <p> This is fist Django Blog. Django is fun.  </p>
+   <p>published: {{post.published_date }}</p>
+   <h2><a href="">{{post.title}}</a></h2>
+   <p> {{post.text | linebreaks }} </p>
   </div>
+ {% endfor %}
  </body>
 </html>
